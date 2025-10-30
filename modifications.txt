@@ -1,0 +1,30 @@
+* disable MultiSource/Applications/obsequi
+    * reason: incompatible with musl
+* disable MultiSource/Applications/lemon
+    * reason: uses fork
+* disable MultiSource/Applications/clamscan
+    * reason: uses dup
+* disable MultiSource/Applications/siod
+    * reason: uses times
+
+* disable MultiSource/Benchmarks/MiBench
+    * reason: incompatible with musl
+* disable MultiSource/Benchmarks/DOE-ProxyApps-C++
+    * reason: incompatible with musl
+* disable MultiSource/Benchmarks/PAQ8p
+    * reason: uses fork
+
+From MultiSource/Benchmarks:
+Failed Tests (3):
+  test-suite :: MultiSource/Benchmarks/Prolangs-C++/city/city.test
+  test-suite :: MultiSource/Benchmarks/Prolangs-C/unix-smail/unix-smail.test
+  test-suite :: MultiSource/Benchmarks/Ptrdist/ft/ft.test
+
+From SingleSource:
+Failed Tests (5):
+  test-suite :: SingleSource/Benchmarks/Misc-C++/stepanov_v1p2.test
+  test-suite :: SingleSource/Regression/C/Regression-C-float16-smoke.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-printf-2.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-user-printf.test
+  test-suite :: SingleSource/UnitTests/Vectorizer/fmax-reduction.test
+

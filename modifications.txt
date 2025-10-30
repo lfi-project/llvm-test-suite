@@ -14,6 +14,11 @@
 * disable MultiSource/Benchmarks/PAQ8p
     * reason: uses fork
 
+* disable tools/test
+    * reason: uses pipe2
+* disable MicroBenchmarks
+    * reason requires clock_gettime
+
 From MultiSource/Benchmarks:
 Failed Tests (3):
   test-suite :: MultiSource/Benchmarks/Prolangs-C++/city/city.test
@@ -27,4 +32,3 @@ Failed Tests (5):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-printf-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-user-printf.test
   test-suite :: SingleSource/UnitTests/Vectorizer/fmax-reduction.test
-

@@ -357,11 +357,16 @@ if(NOT TEST_SUITE_SUBDIRS)
   endforeach()
   # Drop things we do not want to be automatically added.
   list(REMOVE_ITEM TEST_SUITE_SUBDIRS litsupport tools CTMark)
+  if(LFI)
+    list(REMOVE_ITEM TEST_SUITE_SUBDIRS MicroBenchmarks)
+  endif()
   if(NOT TEST_SUITE_FORTRAN)
     list(REMOVE_ITEM TEST_SUITE_SUBDIRS Fortran)
   endif()
   # Separately add tests for tools.
-  list(APPEND TEST_SUITE_SUBDIRS tools/test)
+  if(NOT LFI)
+    list(APPEND TEST_SUITE_SUBDIRS tools/test)
+  endif()
   set(TEST_SUITE_SUBDIRS "${TEST_SUITE_SUBDIRS}")
 endif()
 set(TEST_SUITE_SUBDIRS "${TEST_SUITE_SUBDIRS}" CACHE STRING

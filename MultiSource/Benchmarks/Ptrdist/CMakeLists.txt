@@ -1,5 +1,7 @@
 add_subdirectory(anagram)
 add_subdirectory(bc)
-add_subdirectory(ft)
+if(NOT LFI)
+  add_subdirectory(ft)
+endif()
 add_subdirectory(ks)
 add_subdirectory(yacr2)

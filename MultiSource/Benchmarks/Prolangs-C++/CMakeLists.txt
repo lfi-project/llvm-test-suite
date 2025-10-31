@@ -1,4 +1,6 @@
-add_subdirectory(city)
+if(NOT LFI)
+  add_subdirectory(city)
+endif()
 add_subdirectory(employ)
 add_subdirectory(life)
 add_subdirectory(ocean)

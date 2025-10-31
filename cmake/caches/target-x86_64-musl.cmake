@@ -1,0 +1,8 @@
+set(CMAKE_SYSTEM_NAME Linux )
+set(triple x86_64-linux-musl )
+set(CMAKE_C_COMPILER /opt/x86_64-native-clang/bin/clang CACHE STRING "" FORCE)
+set(CMAKE_C_COMPILER_TARGET ${triple} CACHE STRING "" FORCE)
+set(CMAKE_CXX_COMPILER /opt/x86_64-native-clang/bin/clang++ CACHE STRING "" FORCE)
+set(CMAKE_CXX_COMPILER_TARGET ${triple} CACHE STRING "" FORCE)
+set(CMAKE_SYSROOT /opt/x86_64-native-clang/sysroot )
+set(LFI ON CACHE BOOL "")

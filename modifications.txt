@@ -3,7 +3,7 @@
 * disable MultiSource/Applications/lemon
     * reason: uses fork
 * disable MultiSource/Applications/clamscan
-    * reason: uses dup
+    * reason: incompatible with musl
 * disable MultiSource/Applications/siod
     * reason: uses times
 
@@ -13,22 +13,24 @@
     * reason: incompatible with musl
 * disable MultiSource/Benchmarks/PAQ8p
     * reason: uses fork
+* disable MultiSource/Benchmarks/Prolangs-C/unix-smail
+    * reason: uses getuid
+
+* disable MultiSource/Benchmarks/Prolangs-C++/city
+    * reason: incompatible with musl
+    * fails under native aarch64-musl as well
+* disable MultiSource/Benchmarks/Ptrdist/ft
+    * reason: incompatible with musl
+    * fails under native aarch64-musl as well
+
+* disable SingleSource/UnitTests/AArch64
+    * reason: compilation issue (more investigation necessary)
 
 * disable tools/test
     * reason: uses pipe2
 * disable MicroBenchmarks
     * reason requires clock_gettime
 
-From MultiSource/Benchmarks:
 Failed Tests (3):
-  test-suite :: MultiSource/Benchmarks/Prolangs-C++/city/city.test
-  test-suite :: MultiSource/Benchmarks/Prolangs-C/unix-smail/unix-smail.test
-  test-suite :: MultiSource/Benchmarks/Ptrdist/ft/ft.test
-
-From SingleSource:
-Failed Tests (5):
-  test-suite :: SingleSource/Benchmarks/Misc-C++/stepanov_v1p2.test
   test-suite :: SingleSource/Regression/C/Regression-C-float16-smoke.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-printf-2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-user-printf.test
   test-suite :: SingleSource/UnitTests/Vectorizer/fmax-reduction.test

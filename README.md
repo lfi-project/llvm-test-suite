@@ -12,7 +12,7 @@ See https://llvm.org/docs/TestSuiteGuide.html for LLVM's documentation.
 ```
 mkdir build-lfi
 cd build-lfi
-cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64_lfi.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DTEST_SUITE_RUN_UNDER='lfi-run --' -DCMAKE_BUILD_TYPE=Release -DTEST_SUITE_USER_MODE_EMULATION=ON
+cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64_lfi.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DTEST_SUITE_RUN_UNDER='lfi-run --' -DCMAKE_BUILD_TYPE=Release -DTEST_SUITE_USER_MODE_EMULATION=ON -DTEST_SUITE_SUBDIRS="$PWD/../MultiSource;$PWD/../SingleSource"
 ninja
 ```
 
@@ -44,7 +44,7 @@ disable correctness tests that are unsuitable for performance measurement.
 LFI:
 
 ```
-cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64_lfi.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DTEST_SUITE_RUN_UNDER='lfi-run --' -DCMAKE_BUILD_TYPE=Release -DTEST_SUITE_USER_MODE_EMULATION=ON -DTEST_SUITE_BENCHMARKING_ONLY=ON
+cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64_lfi.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DTEST_SUITE_RUN_UNDER='lfi-run --' -DCMAKE_BUILD_TYPE=Release -DTEST_SUITE_USER_MODE_EMULATION=ON -DTEST_SUITE_BENCHMARKING_ONLY=ON -DTEST_SUITE_SUBDIRS="$PWD/../MultiSource;$PWD/../SingleSource"
 ```
 
 Native (Musl):

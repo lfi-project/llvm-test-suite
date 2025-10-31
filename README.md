@@ -33,7 +33,7 @@ Now run the tests
 Same as above except use `target-x86_64-musl.cmake` (or `target-aarch64-musl.cmake`) to select the native musl toolchain.
 
 ```
-cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64-musl.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DCMAKE_BUILD_TYPE=Release -DTEST_SUITE_USER_MODE_EMULATION=ON
+cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64-musl.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DCMAKE_BUILD_TYPE=Release
 ```
 
 # Benchmarking
@@ -50,7 +50,7 @@ cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64_lfi.
 Native (Musl):
 
 ```
-cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64-musl.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DCMAKE_BUILD_TYPE=Release -DTEST_SUITE_USER_MODE_EMULATION=ON -DTEST_SUITE_BENCHMARKING_ONLY=ON
+cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-x86_64-musl.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DCMAKE_BUILD_TYPE=Release -DTEST_SUITE_BENCHMARKING_ONLY=ON
 ```
 
 You may also want to run benchmarks using core shielding. Use the

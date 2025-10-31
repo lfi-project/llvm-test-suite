@@ -31,6 +31,7 @@
 * disable MicroBenchmarks
     * reason requires clock_gettime
 
+Known failures:
 Failed Tests (3):
   test-suite :: SingleSource/Regression/C/Regression-C-float16-smoke.test
   test-suite :: SingleSource/UnitTests/Vectorizer/fmax-reduction.test

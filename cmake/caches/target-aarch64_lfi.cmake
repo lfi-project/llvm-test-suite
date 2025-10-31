@@ -1,0 +1,8 @@
+set(CMAKE_SYSTEM_NAME Linux )
+set(triple aarch64_lfi-linux-musl )
+set(CMAKE_C_COMPILER /opt/aarch64-lfi-integrated-clang/bin/clang CACHE STRING "" FORCE)
+set(CMAKE_C_COMPILER_TARGET ${triple} CACHE STRING "" FORCE)
+set(CMAKE_CXX_COMPILER /opt/aarch64-lfi-integrated-clang/bin/clang++ CACHE STRING "" FORCE)
+set(CMAKE_CXX_COMPILER_TARGET ${triple} CACHE STRING "" FORCE)
+set(CMAKE_SYSROOT /opt/aarch64-lfi-integrated-clang/sysroot )
+set(LFI ON CACHE BOOL "")

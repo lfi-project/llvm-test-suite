@@ -79,3 +79,19 @@ Make sure to run the benchmarks with `-j 1` to disable parallel testing.
 ../utils/compare.py -m size.__text native.json lfi.json
 ../utils/compare.py native.json lfi.json
 ```
+
+## SPEC benchmarks
+
+The test suite can connect to SPEC benchmarks if they are externally installed.
+
+LFI:
+
+```
+cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-aarch64_lfi.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DTEST_SUITE_RUN_UNDER='lfi-run --' -DCMAKE_BUILD_TYPE=Release -DTEST_SUITE_USER_MODE_EMULATION=ON -DTEST_SUITE_SUBDIRS="$PWD/../External" -DTEST_SUITE_SPEC2017_ROOT=/path/to/cpu2017
+```
+
+Native Musl:
+
+```
+cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-aarch6464-musl.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DCMAKE_BUILD_TYPE=Release  -DTEST_SUITE_SUBDIRS="$PWD/../External" -DTEST_SUITE_SPEC2017_ROOT=$HOME/cpu2017
+```

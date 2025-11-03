@@ -9,7 +9,9 @@ add_subdirectory(519.lbm_r)        # C
 if (TEST_SUITE_FORTRAN)
   add_subdirectory(521.wrf_r)      # Fortran, C
 endif ()
-add_subdirectory(526.blender_r)    # C++, C
+if(NOT LFI)
+  add_subdirectory(526.blender_r)    # C++, C
+endif()
 if (TEST_SUITE_FORTRAN)
   add_subdirectory(527.cam4_r)     # Fortran, C
 endif ()

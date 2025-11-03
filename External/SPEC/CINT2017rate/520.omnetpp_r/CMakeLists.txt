@@ -6,7 +6,7 @@ endif ()
 
 speccpu2017_benchmark(RATE)
 
-add_definitions(-DWITH_NETBUILDER)
+add_definitions(-DWITH_NETBUILDER -D_LARGEFILE64_SOURCE)
 speccpu2017_add_include_dirs(
   simulator/platdep
   simulator

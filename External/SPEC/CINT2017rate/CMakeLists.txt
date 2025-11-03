@@ -1,4 +1,6 @@
-add_subdirectory(500.perlbench_r)  # C
+if(NOT LFI)
+  add_subdirectory(500.perlbench_r)  # C
+endif()
 add_subdirectory(502.gcc_r)        # C
 add_subdirectory(505.mcf_r)        # C
 add_subdirectory(520.omnetpp_r)    # C++

@@ -6,6 +6,7 @@ endif ()
 
 speccpu2017_benchmark(RATE)
 
+add_definitions(-DHAVE_STRING_H)
 speccpu2017_add_include_dirs(
   x264_src
   x264_src/extras

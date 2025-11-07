@@ -76,7 +76,7 @@ Make sure to run the benchmarks with `-j 1` to disable parallel testing.
 
 ```
 ../utils/compare.py -m compile_time native.json lfi.json
-../utils/compare.py -m size.__text native.json lfi.json
+../utils/compare.py -m size..text native.json lfi.json
 ../utils/compare.py native.json lfi.json
 ```
 
@@ -93,5 +93,5 @@ cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-aarch64_lfi
 Native Musl:
 
 ```
-cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-aarch6464-musl.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DCMAKE_BUILD_TYPE=Release  -DTEST_SUITE_SUBDIRS="$PWD/../External" -DTEST_SUITE_SPEC2017_ROOT=$HOME/cpu2017
+cmake .. -DCMAKE_C_COMPILER=clang -G Ninja -C ../cmake/caches/target-aarch64-musl.cmake -DCMAKE_C_FLAGS="-static-pie" -DCMAKE_CXX_FLAGS="-static-pie" -DCMAKE_BUILD_TYPE=Release  -DTEST_SUITE_SUBDIRS="$PWD/../External" -DTEST_SUITE_SPEC2017_ROOT=$HOME/cpu2017
 ```
